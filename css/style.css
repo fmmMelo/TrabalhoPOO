@@ -45,9 +45,18 @@ body, ul, li
 .menu li a
 {
     text-decoration: none;
-    color: #000;
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
+
+.btu a
+{
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 6px 8px;
+
+}
+
 
 .header h1 a
 {
