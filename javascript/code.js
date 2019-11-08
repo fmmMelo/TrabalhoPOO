@@ -3,14 +3,20 @@ function view(ord)
     if(ord == "1")
     {
         document.getElementById("section_reg").className = "invisivel";
+        document.getElementById("section_web").className = "invisivel";
         document.getElementById("section_ent").className = "section";
+    }
+
+    if(ord == "2")
+    {
+        document.getElementById("section_reg").className = "section";
+        document.getElementById("section_web").className = "invisivel";
+        document.getElementById("section_ent").className = "invisivel";
     }
 }
 
 
-
-
-var global;
+var global, id;
 
 function inserir()
 {
@@ -37,22 +43,6 @@ function inserir()
 
 function enter()
 {
-
-
-
-    global = JSON.parse(localStorage.getItem("Usuarios"));
-
-    var nome = document.getElementById("enter_name").value;
-    var  password = document.getElementById("enter_pass").value;
-
-    for(var i = 0; i <= global.length; i++)
-    {
-        if(global[i].name == nome && global[i].pass == password)
-        {
-            document.getElementById("edit").className = "menu";
-            alert("deu certo");
-        }
-    }
 
 
 }

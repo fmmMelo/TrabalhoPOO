@@ -1,5 +1,5 @@
 var vetor = new Array();
-var i, pega, id;
+var i, pega;
 
 class Local
 {
@@ -41,5 +41,31 @@ class Lol
         this.dn = document.getElementById("date").value;
         this.email = document.getElementById("email").value;
         this.pass = document.getElementById("pass").value;
+    }
+
+    entrar()
+    {
+        
+    }
+
+    // search(id)
+    // {
+    //     var busca = JSON.parse(localStorage.getItem("Usuarios"));
+
+    //         for(i = 0; i <= busca.length; i++)
+    //         {
+    //             if(id == busca[i].name)
+    //             {
+    //                 return i
+    //             }
+    //         }
+        
+    //         return -1
+    // }
+
+    atualizar(nome_at, dn_at, email_at, pass_at)
+    {
+        var upgrade = JSON.parse(localStorage.getItem("Usuarios"));
+
     }
 }
