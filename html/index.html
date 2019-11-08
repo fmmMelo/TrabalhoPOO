@@ -15,18 +15,18 @@
         <nav>
             <ul class="menu">
             
-                <li><a href="/">edit account </a></li>
-                <li><a href="/">Sign Up</a></li>
-                <li class="btu"><a href="/">Sign In</a></li>
+                <li><a href="#Editar" onclick="view('3')" id="edit" class="invisivel">edit account</a></li>
+                <li><a href="#Registrar">Sign Up</a></li>
+                <li class="btu"><a href="#Entrar" onclick="view('1')">Sign In</a></li>
                 
 
             </ul>
         </nav>
     </header> 
     
-    <section class="section">
+    <section id="section_reg" class="section">
         
-            <form>
+            <form method="GET">
                     <div class="form-in">
                         <label>Nome</label>
                         <p><input type="text" id="name" required></p>
@@ -41,12 +41,33 @@
                         <p><input type="password" id="pass" required></p>
         
                         <label>Confirme a senha</label>
-                        <p><input type="password" id="confirm-p" required></p>
-                        <p><button>Insert</button></p>
+                        <p><input type="password" id="confirm_pass" required></p>
+                        <p><button onclick="inserir()">Insert</button></p>
                     </div>
                 </form>
     </section>
 
+    <section id="section_ent"class="invisivel">
+
+        <form>
+            <div class="ent_log">
+
+                <label>Nome</label>
+                <p><input type="text" id="enter_name" required></p>
+
+                <label>Senha</label>
+                <p><input type="password" id="enter_pass" required></p>
+
+                <p><button onclick="enter()">Entrar</button></p>
+
+            </div>
+        </form>
+
+    </section>
+
 </body>
+
+<script src="../javascript/code.js"></script>
+<script src="../javascript/bd.js"></script>
 
 </html>
