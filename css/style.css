@@ -8,6 +8,106 @@ body, ul, li
     font-family: 'Roboto', sans-serif;
 }
 
+.hero-intro{
+    /* Alinhamento de texto no centro vertical */
+    align-items: center;
+    /* 3 fundos aplicados: 2 são degrades e o último é uma imagem*/
+    background: 
+      linear-gradient( 45deg, rgba(93, 153, 198, 0.6) 0%, rgba(93, 153, 198, 0.6) 100%),
+      linear-gradient( rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%), url(https://blog.goldencross.com.br/wp-content/uploads/2018/12/15d65c510b3148fe97941602c06b9aaa.jpg) no-repeat center center;
+    /* Imagem de fundo cobrindo a largura total do elemento*/
+    background-size: cover;
+    /* Cor da fonte */
+    color: white;
+    /* Display flexível */
+    display: flex;
+    /* Altera a direção flex. Por padrão, todos os elementos com pais flexíveis nascem um ao lado do outro. Essa alteração, faz com que um volte a nescer sobre os outros */
+    flex-direction: column;
+    /* Altura do elemento */
+    height: 500px;  
+    /* Alinhamento justificado ao centro */
+    justify-content: center;
+    /* Posicionamento relativo: para que o posicionamento absoluto dos elementos filhos funcione corretamente, o elemento pai deve ter posicionamento relativo */
+    position: relative;          
+  }
+
+  .hero-btn
+  {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .hero-btn button
+  {
+      width: 145px;
+      height: 55px;
+      margin-left: 12px; 
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+      cursor: pointer;
+  }
+
+  .btn-1
+  {
+      background: none;
+      border: 2px solid #fff;
+      color: #fff;
+  }
+
+    .btn-2
+  {
+      background:  #90caf9;
+      border: 2px solid  #90caf9;
+      color: #fff;
+  }
+
+  .coluna
+  {
+    display: flex;
+  /* Alinhamento justificado com espaço entre as divisões. Isso cria sepação simétrica entre as 3 colunas de contaúdo */
+  justify-content: space-between;
+  margin: 0 auto;
+  /* Espaçamento interno de 4rem para cima e para baixo e de 0px para esquerda e direita */
+  padding: 4rem 0;
+  /* Largura do elemento */
+  width: 940px;
+}
+
+.coluna section{
+    /* Margem à direita */
+    margin-right: 5rem;
+    /* Alinhamento de texto */
+    text-align: justify;
+  }
+
+  .coluna img
+  {
+    border-radius: 100px;
+    margin: 1rem;
+  }
+  
+  .coluna p{
+    /* Tamanho da fonte */
+    font-size: 14px;
+    /* Altura da linha */
+    line-height: 1.6;
+
+  }
+  
+  .coluna h1{
+    /* Tamanho da fonte */
+    font-size: 1rem;
+    /* Margem inferior de 2rem */ 
+    margin-bottom: 2rem;
+    /* Espaçamento entre as letras */
+    letter-spacing: 3px;
+    /* Texto em caixa alta*/
+    text-transform: uppercase;
+    text-align: center
+  }
+
 .header
 {
     display: flex;
@@ -61,9 +161,10 @@ body, ul, li
 .header h1 a
 {
     text-decoration: none;
-    color: #82ada9;
+    color: #90caf9;
     letter-spacing: 3px;
     margin-left: 12px;
+    font-size: px;
 }
 
 .section

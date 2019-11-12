@@ -1,16 +1,26 @@
-function view(ord)
+function view(ard)
 {
-    if(ord == "1")
+    if(ard == "1")
     {
         document.getElementById("section_reg").className = "invisivel";
         document.getElementById("section_web").className = "invisivel";
+        document.getElementById("section_atu").className = "invisivel";
         document.getElementById("section_ent").className = "section";
     }
 
-    if(ord == "2")
+    if(ard == "2")
     {
         document.getElementById("section_reg").className = "section";
         document.getElementById("section_web").className = "invisivel";
+        document.getElementById("section_atu").className = "invisivel";
+        document.getElementById("section_ent").className = "invisivel";
+    }
+
+    if(ard == "3")
+    {
+        document.getElementById("section_atu").className = "section";
+        document.getElementById("section_web").className = "invisivel";
+        document.getElementById("section_reg").className = "invisivel";
         document.getElementById("section_ent").className = "invisivel";
     }
 }
@@ -44,5 +54,18 @@ function inserir()
 function enter()
 {
 
+   var nome = document.getElementById("enter_name").value;
+   var senha = document.getElementById("enter_pass").value;
+
+   var envia = new Lol();
+   id = envia.entrar(nome, senha);
+   
+
+}
+
+function update()
+{
+    var up = new Lol();
+    up.upgrade(id);
 
 }

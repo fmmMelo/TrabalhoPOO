@@ -43,9 +43,26 @@ class Lol
         this.pass = document.getElementById("pass").value;
     }
 
-    entrar()
+    entrar(nome, senha)
     {
-        
+        var ent = JSON.parse(localStorage.getItem("Usuarios"));
+
+        for( i = 0; i <= ent.length; i++)
+        {
+            if(ent[i].name == nome && ent[i].pass == senha)
+            {
+                document.getElementById("edit").className = "menu";
+                document.getElementById("section_reg").className = "invisivel";
+                document.getElementById("section_web").className = "section";
+                document.getElementById("section_ent").className = "invisivel";
+                return i
+            }
+
+        }
+
+        alert("usuario não está cadastrado!");
+
+    
     }
 
     // search(id)
@@ -63,9 +80,24 @@ class Lol
     //         return -1
     // }
 
-    atualizar(nome_at, dn_at, email_at, pass_at)
+    upgrade(ord)
     {
+
+        var n = document.getElementById("editname").value;
+        var d = document.getElementById("editdate").value;
+        var e = document.getElementById("editemail").value;
+        var p = document.getElementById("editpass").value;
+
         var upgrade = JSON.parse(localStorage.getItem("Usuarios"));
+
+        upgrade[ord].name = n;
+        upgrade[ord].dn = d;
+        upgrade[ord].email = e;
+        upgrade[ord].pass = p;
+
+        localStorage.setItem("Usuarios", JSON.stringify(upgrade));
+
+        alert("Usuario atualizado com sucesso!");
 
     }
 }
