@@ -5,7 +5,7 @@ body, ul, li
     list-style: none;
     font-size: 1rem;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .hero-intro{
@@ -28,7 +28,7 @@ body, ul, li
     /* Alinhamento justificado ao centro */
     justify-content: center;
     /* Posicionamento relativo: para que o posicionamento absoluto dos elementos filhos funcione corretamente, o elemento pai deve ter posicionamento relativo */
-    position: relative;          
+    position: block; 
   }
 
   .hero-btn
@@ -40,81 +40,115 @@ body, ul, li
 
   .hero-btn button
   {
-      width: 145px;
+      width: 180px;
       height: 55px;
       margin-left: 12px; 
       border-radius: 5px;
       font-size: 16px;
       outline: none;
       cursor: pointer;
+      text-align: center;
   }
 
-  .btn-1
+.btn-1
   {
       background: none;
       border: 2px solid #fff;
       color: #fff;
+      transition: 0.6s;
   }
 
-    .btn-2
+  .btn-1:hover
+  {
+      background: #fff;
+      border: none;
+      color: #90caf9;
+      transition: 0.6s;
+  }
+
+.btn-2
   {
       background:  #90caf9;
       border: 2px solid  #90caf9;
       color: #fff;
+      transition: 0.6s;
   }
 
-  .coluna
+  .btn-2:hover
   {
-    display: flex;
-  /* Alinhamento justificado com espaço entre as divisões. Isso cria sepação simétrica entre as 3 colunas de contaúdo */
-  justify-content: space-between;
-  margin: 0 auto;
-  /* Espaçamento interno de 4rem para cima e para baixo e de 0px para esquerda e direita */
-  padding: 4rem 0;
-  /* Largura do elemento */
-  width: 940px;
-}
-
-.coluna section{
-    /* Margem à direita */
-    margin-right: 5rem;
-    /* Alinhamento de texto */
-    text-align: justify;
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: 0.6s;
   }
 
-  .coluna img
-  {
-    border-radius: 100px;
-    margin: 1rem;
-  }
+
+  /*--------------------------------------Parte das colunas de texto------------------------------------*/
+    .coluna
+    {
+        display: flex;
+        /* Alinhamento justificado com espaço entre as divisões. Isso cria sepação simétrica entre as 3 colunas de contaúdo */
+        justify-content: space-between;
+        margin: 0 auto;
+        /* Espaçamento interno de 4rem para cima e para baixo e de 0px para esquerda e direita */
+        padding: 4rem 0;
+        /* Largura do elemento */
+        width: 940px;
+    }
+
+    .coluna section
+    {
+        /* Margem à direita */
+        margin-right: 5rem;
+        /* Alinhamento de texto */
+        text-align: justify;
+    }
+
+    .coluna img
+    {
+        border-radius: 100px;
+        margin: 1rem;
+    }
+    
+    .coluna p
+    {
+        /* Tamanho da fonte */
+        font-size: 14px;
+        /* Altura da linha */
+        line-height: 1.6;
+
+    }
   
-  .coluna p{
-    /* Tamanho da fonte */
-    font-size: 14px;
-    /* Altura da linha */
-    line-height: 1.6;
+    .coluna h1
+    {
+        /* Tamanho da fonte */
+        font-size: 1rem;
+        /* Margem inferior de 2rem */ 
+        margin-bottom: 2rem;
+        /* Espaçamento entre as letras */
+        letter-spacing: 3px;
+        /* Texto em caixa alta*/
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        
+    }
+  /*----------------------------------Fim da parte das colunas de texto--------------------------------- */
 
-  }
-  
-  .coluna h1{
-    /* Tamanho da fonte */
-    font-size: 1rem;
-    /* Margem inferior de 2rem */ 
-    margin-bottom: 2rem;
-    /* Espaçamento entre as letras */
-    letter-spacing: 3px;
-    /* Texto em caixa alta*/
-    text-transform: uppercase;
-    text-align: center
-  }
 
 .header
 {
+    position: fixed;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
+}
 
+.header ul li 
+{
+    display: inline-block;
 }
 
 .menu
@@ -164,7 +198,8 @@ body, ul, li
     color: #90caf9;
     letter-spacing: 3px;
     margin-left: 12px;
-    font-size: px;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .section
@@ -183,6 +218,84 @@ body, ul, li
 {
     text-align: center;
 }
+
+  /* -------------------------------Parte da API do Google Maps ------------------------------------ */
+    #mapa-marcadores
+    {
+        display: flex;
+        width: 500px;  
+        height: 580px;
+        box-shadow: 1px 5px 5px 1px rgba(0,0,0,.18);
+    }
+    
+    #markers
+    {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0px 1rem 0px 1rem;
+    }
+    
+    .text-maps
+    {
+        text-align: justify;
+        display: block;
+        flex-direction: row;
+        flex-wrap: wrap;
+        letter-spacing: 1px;
+        width: 300px;
+        height: 580px;
+        margin-right: 8rem;
+        color: #000;
+        font-family: 'Muli', sans-serif;
+    }
+
+    #teste1
+    {
+        border-radius: 3px;
+        max-width: 100%;
+        height: 140px;
+        margin-bottom: 22px;
+        box-shadow: 0 3px 10px 0 rgba(0,0,0,.18);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #03a9fc;
+        color: #32373d;
+        margin-bottom: 50px;
+        
+    }
+
+    #teste1 h2 
+    {
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    #teste2 
+    {
+        border-radius: 3px;
+        max-width: 100%;
+        height: 140px;
+        margin-bottom: 22px;
+        box-shadow: 0 3px 10px 0 rgba(0,0,0,.18);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #fff;
+        color: #32373d; 
+    }
+
+    #teste2 h2 
+    {
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    /*---------------------------Fim da parte da API do Google Maps------------------------------------- */
 
 .invisivel
 {

@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <title>Doação de agasalhos</title>
     <link rel="stylesheet" href= "../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+<script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxLiIYyQ5foAHNm1bVMf47qsve4ERTG7Y&callback=initMap"></script>
+<script src="../javascript/API.js"></script>
+<script src="../javascript/bd.js"></script>
+<script src="../javascript/code.js"></script>
 
 <body>
     <header class="header">
@@ -26,12 +32,12 @@
     </header>
 
     <section class="hero-intro">
-        <h1>Meu site é top</h1>
-        <p>Olha isso! Olha só! Olha lá! Esses raios de luz...</p>
+        <h1>Doação Online</h1>
+        <p>Faça sua parte e descubra onde contribuir em Dourados</p>
         
         <div class="hero-btn">
-            <button class="btn-1">Faça sua parte</button>
-            <button class="btn-2">Entre aqui</button>
+            <button class="btn-1">Contribua aqui</button>
+            <button class="btn-2">Nossa Comunidade</button>
         </div>
       
       </section>
@@ -75,6 +81,29 @@
                  Aldus PageMaker.</p>
         </section>
     </div>
+
+    <section id="markers">
+
+            <div class="text-maps">
+                <h2>Locais de acolhimento</h2>  
+                    
+                <p>Exemplo de mapa com múltiplos marcadores. Ao selecionar cada um dos marcadores,
+                uma janela de informações é exibida sobre o mapa.</p>
+    
+                <div id="teste1">
+                    <h2>+800</h2>
+                    <p>Familias atendidas</p>
+                </div>
+
+                <div id="teste2">
+                    <h2>+2000</h2>
+                    <p>Contribuições para pessoas</p>
+                </div>
+
+            </div>
+
+        <div id="mapa-marcadores"></div>
+    </section>
     
     <section id="section_reg" class="invisivel">
         
@@ -148,7 +177,5 @@
 
 </body>
 
-<script src="../javascript/bd.js"></script>
-<script src="../javascript/code.js"></script>
 
 </html>
