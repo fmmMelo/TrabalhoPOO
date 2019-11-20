@@ -42,6 +42,14 @@ function mapaMultiplosMarcadores(){
         gm: '<a style="text-decoration: none;" href="https://www.google.com/maps/place/Casa+Crian%C3%A7a+Feliz/@-22.243384,-54.739562,15z/data=!4m5!3m4!1s0x0:0x54b3c47f853ac91a!8m2!3d-22.243384!4d-54.739562">Visualize no Google Maps</a>',
         latitudeLongitude: { lat: -22.243384,  lng: -54.739562 }
       },
+      { 
+        nome: 'Casa Criança Feliz',
+        descricao: 'Casa Criança Feliz - Dourados',
+        endereco: 'R. Ramão Osório, 535 - Vila Sao Braz, Dourados - MS, 79843-250',
+        telefone: 'Telefone contato: (67) 3424-4673', 
+        gm: '<a style="text-decoration: none;" href="https://www.google.com/maps/place/Casa+Crian%C3%A7a+Feliz/@-22.243384,-54.739562,15z/data=!4m5!3m4!1s0x0:0x54b3c47f853ac91a!8m2!3d-22.243384!4d-54.739562">Visualize no Google Maps</a>',
+        latitudeLongitude: { lat: -22.243384,  lng: -54.739562 }
+      },
     ];  
     
     mapaMultiplosMarcadores = new google.maps.Map(divMapaMarcadores, {
