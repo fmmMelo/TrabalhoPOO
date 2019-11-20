@@ -89,6 +89,7 @@ body, ul, li
         display: flex;
         /* Alinhamento justificado com espaço entre as divisões. Isso cria sepação simétrica entre as 3 colunas de contaúdo */
         justify-content: space-between;
+        align-items: center;
         margin: 0 auto;
         /* Espaçamento interno de 4rem para cima e para baixo e de 0px para esquerda e direita */
         padding: 4rem 0;
@@ -106,8 +107,10 @@ body, ul, li
 
     .coluna img
     {
+        width: 150px;
+        height: 130px;
         border-radius: 100px;
-        margin: 1rem;
+        margin-left: 2.5rem;
     }
     
     .coluna p
