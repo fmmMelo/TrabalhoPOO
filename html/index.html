@@ -23,8 +23,7 @@
             <ul class="menu">
             
                 <li><a href="#Editar" onclick="view('3')" id="edit" class="invisivel">edit account</a></li>
-                <li><a href="#Registrar" onclick="view('2')">Sign Up</a></li>
-                <li class="btu"><a href="#Entrar" onclick="view('1')">Sign In</a></li>
+                <li class="btu"><a href="#Entrar" onclick="view('1')">Entrar / Cadastrar-se</a></li>
                 
 
             </ul>
@@ -105,75 +104,45 @@
         <div id="mapa-marcadores"></div>
     </section>
     
-    <section id="section_reg" class="invisivel">
-        
-            <form method="GET">
+    <section class="container">
 
-                <h1>Faça seu cadastro</h1>
-                    <div class="form-in">
+        <div class="form-log">
+                <form method="GET">
+                    <h1>Entrar</h1>
                         <label>Nome</label>
-                        <p><input type="text" id="name" required></p>
-        
-                        <label>Data de Nascimento</label>
-                        <p><input type="date" id="date" required></p>
-        
-                        <label>E-mail</label>
-                        <p><input type="email" id="email" required></p>
+                        <p><input type="text" id="enter_name" required></p>
         
                         <label>Senha</label>
-                        <p><input type="password" id="pass" required></p>
+                        <p><input type="password" id="enter_pass" required></p>
         
-                        <label>Confirme a senha</label>
-                        <p><input type="password" id="confirm_pass" required></p>
-                        <p><button onclick="inserir()">Insert</button></p>
-                    </div>
+                        <p><button onclick="enter()">Entrar</button></p>
                 </form>
+        </div>
+
+
+        <div class="form-in"> 
+            <form method="GET">
+                <h1>Cadastrar-se</h1>
+                    <label>Nome</label>
+                    <p><input type="text" id="name" required></p>
+    
+                    <label>Data de Nascimento</label>
+                    <p><input type="date" id="date" required></p>
+
+                    <label>CPF</label>
+                    <p><input type="number" id="cpf" required></p>
+    
+                    <label>E-mail</label>
+                    <p><input type="email" id="email" required></p>
+    
+                    <label>Senha</label>
+                    <p><input type="password" id="pass" required></p>
+    
+                    <p><button onclick="inserir()">Cadastrar</button></p>
+            </form>
+        </div>
     </section>
-
-    <section id="section_ent"class="invisivel">
-
-        <form>
-            <div class="ent_log">
-
-                <label>Nome</label>
-                <p><input type="text" id="enter_name" required></p>
-
-                <label>Senha</label>
-                <p><input type="password" id="enter_pass" required></p>
-
-                <p><button onclick="enter()">Entrar</button></p>
-
-            </div>
-        </form>
-
-    </section>
-
-    <section id="section_web" class="invisivel">
-
-        <p><img src="https://media.tenor.com/images/80efde6a592e6c4a60452646d8596888/tenor.gif"></p>
-        <h2>Voce está logado no site</h2>
-            
-        </section>
-    <section id = "section_atu" class="invisivel">
-
-        <form method="GET">
-            <div class="form-in">
-                <label>Nome</label>
-                <p><input type="text" id="editname" required></p>
-
-                <label>Data de Nascimento</label>
-                <p><input type="date" id="editdate" required></p>
-
-                <label>E-mail</label>
-                <p><input type="email" id="editemail" required></p>
-
-                <label>Senha</label>
-                <p><input type="password" id="editpass" required></p>
-
-                <p><button onclick="update()">atualizar</button></p>
-            </div>
-        </form>
-    </section>
+   
 
 </body>
 

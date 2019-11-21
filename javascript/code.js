@@ -31,24 +31,12 @@ var global, id;
 function inserir()
 {
 
-    var password = document.getElementById("pass").value;
-    var confirmpass = document.getElementById("confirm_pass").value;
-
-    if(password == confirmpass)
-    {   
         var add = new Lol();
         add.save();
 
         var add_bd = new Local();
         add_bd.banco(add);
-    }
-
-    else
-    {
-        alert("As senhas não se correspondem!");
-    }
-
-
+        
 }
 
 function enter()

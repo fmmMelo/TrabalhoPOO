@@ -147,6 +147,7 @@ body, ul, li
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
+    z-index: 9999;
 }
 
 .header ul li 
@@ -205,23 +206,6 @@ body, ul, li
     font-weight: 700;
 }
 
-.section
-{
-    width: 100%;
-    height: 88.8vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #b2dfdb;
-    background-repeat: no-repeat;
-}
-
-
-.form-in
-{
-    text-align: center;
-}
-
   /* -------------------------------Parte da API do Google Maps ------------------------------------ */
     #mapa-marcadores
     {
@@ -230,6 +214,7 @@ body, ul, li
         height: 580px;
         box-shadow: 1px 5px 5px 1px rgba(0,0,0,.18);
         margin-bottom: 12px;
+        /* position: block; */
     }
     
     #markers
@@ -299,6 +284,111 @@ body, ul, li
         font-weight: 700;
         margin: 0;
     }
+
+    .container
+  {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(50deg,#fff, #90caf9, #5d99c6 );
+      background-size: 300% 350%;
+  }
+  .form-in
+  {
+      border: 1px solid #90caf9;
+      align-items: center;
+      color: #5d99c6;
+      font-weight: 500;
+      width: 500px;
+      height: 550px; 
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      padding: 2rem;
+      background-color: #fff;
+            
+  }
+  /* #fff, #90caf9, #5d99c6 cores pro gradiente*/
+
+  .form-in input
+  {
+    border: 1px solid  #90caf9;
+    border-radius: 3px;
+    width: 190px;
+    height: 30px;
+    text-align: center;
+    color: #32373d;
+    font-size: 15px;
+  }
+
+  .form-in button
+  {
+    width: 145px;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    background-color:  #5d99c6;
+    color: #fff;
+    text-align: center;
+  }
+
+  .form-log
+  {
+    border: none;
+    align-items: center;
+    color: #90caf9;
+    width: 300px;
+    height: 550px; 
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    background-color: #90caf9;
+  }
+
+
+  .form-log input
+  {
+    border: 1px solid  #90caf9;
+    border-radius: 3px;
+    width: 190px;
+    height: 30px;
+    text-align: center;
+    color: #32373d;
+    font-size: 15px;
+  }
+
+  .form-log button
+  {
+    width: 145px;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    background-color:  #5d99c6;
+    color: #fff;
+    text-align: center;
+  }
+
+  .form-log label
+  {
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  .form-in h1
+  {
+    color: #5d99c6;
+    align-items: center;
+  }
+
+  .form-log h1
+  {
+    color: #fff;
+    align-items: center;
+  }
+
     /*---------------------------Fim da parte da API do Google Maps------------------------------------- */
 
 .invisivel
