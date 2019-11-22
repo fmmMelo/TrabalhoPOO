@@ -32,6 +32,7 @@ class Lol
         this.name;
         this.dn;
         this.email;
+        this.cpf;
         this.pass;
     }
 
@@ -40,6 +41,7 @@ class Lol
         this.name = document.getElementById("name").value;
         this.dn = document.getElementById("date").value;
         this.email = document.getElementById("email").value;
+        this.cpf = document.getElementById("cpf").value;
         this.pass = document.getElementById("pass").value;
     }
 
@@ -52,9 +54,7 @@ class Lol
             if(ent[i].name == nome && ent[i].pass == senha)
             {
                 document.getElementById("edit").className = "menu";
-                document.getElementById("section_reg").className = "invisivel";
-                document.getElementById("section_web").className = "section";
-                document.getElementById("section_ent").className = "invisivel";
+                document.getElementById("tela-reg").className = "invisivel";
                 return i
             }
 
@@ -63,6 +63,11 @@ class Lol
         alert("usuario não está cadastrado!");
 
     
+    }
+
+    entrar_admin()
+    {
+        
     }
 
     // search(id)
@@ -83,17 +88,19 @@ class Lol
     upgrade(ord)
     {
 
-        var n = document.getElementById("editname").value;
-        var d = document.getElementById("editdate").value;
-        var e = document.getElementById("editemail").value;
-        var p = document.getElementById("editpass").value;
+        var nome = document.getElementById("editname").value;
+        var data = document.getElementById("editdate").value;
+        var email= document.getElementById("editemail").value;
+        var cpf = document.getElementById("editcpf").value;
+        var senha= document.getElementById("editpass").value;
 
         var upgrade = JSON.parse(localStorage.getItem("Usuarios"));
 
-        upgrade[ord].name = n;
-        upgrade[ord].dn = d;
-        upgrade[ord].email = e;
-        upgrade[ord].pass = p;
+        upgrade[ord].name = nome;
+        upgrade[ord].dn = data;
+        upgrade[ord].email = email;
+        upgrade[ord].cpf = cpf;
+        upgrade[ord].pass = senha;
 
         localStorage.setItem("Usuarios", JSON.stringify(upgrade));
 

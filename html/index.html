@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxLiIYyQ5foAHNm1bVMf47qsve4ERTG7Y&callback=initMap"></script>
-<script src="../javascript/API.js"></script>
 <script src="../javascript/bd.js"></script>
 <script src="../javascript/code.js"></script>
+<script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxLiIYyQ5foAHNm1bVMf47qsve4ERTG7Y&callback=initMap"></script>
+<script src="../javascript/API.js"></script>
+
 
 <body>
     <header class="header">
@@ -23,25 +24,24 @@
             <ul class="menu">
             
                 <li><a href="#Editar" onclick="view('3')" id="edit" class="invisivel">edit account</a></li>
-                <li class="btu"><a href="#Entrar" onclick="view('1')">Entrar / Cadastrar-se</a></li>
+                <li class="btu"><a href="#tela-reg" onclick="view('1')">Entrar / Cadastrar-se</a></li>
                 
 
             </ul>
         </nav>
     </header>
 
-    <section class="hero-intro">
+    <section id="tela-intro" class="hero-intro">
         <h1>Doação Online</h1>
         <p>Faça sua parte e descubra onde contribuir em Dourados</p>
         
         <div class="hero-btn">
-            <button class="btn-1">Contribua aqui</button>
-            <button class="btn-2">Nossa Comunidade</button>
+            <button class="btn-2">Como posso ajudar ?</button>
         </div>
       
       </section>
 
-      <div class="coluna">
+      <div id="tela-texto" class="coluna">
         <section>
             <img src="http://www.ufes.br/sites/default/files/styles/imagem_conteudo/public/field/image/agasalho1.gif?itok=g2IJgjRC">
             <h1>Teste 1</h1>
@@ -81,7 +81,7 @@
         </section>
     </div>
 
-    <section id="markers">
+    <section id="tela-mapa" class="markers">
 
             <div class="text-maps">
                 <h2>Locais de acolhimento</h2>  
@@ -102,9 +102,10 @@
             </div>
 
         <div id="mapa-marcadores"></div>
+    </div>
     </section>
     
-    <section class="container">
+    <section id="tela-reg" class="invisivel">
 
         <div class="form-log">
                 <form method="GET">

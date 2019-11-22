@@ -31,6 +31,12 @@ body, ul, li
     position: block; 
   }
 
+  .hero-intro h1
+  {
+    font-size: 3rem;
+    margin: 0;
+  }
+
   .hero-btn
   {
       display: flex;
@@ -214,10 +220,9 @@ body, ul, li
         height: 580px;
         box-shadow: 1px 5px 5px 1px rgba(0,0,0,.18);
         margin-bottom: 12px;
-        /* position: block; */
     }
     
-    #markers
+    .markers
     {
         display: flex;
         align-items: flex-start;
@@ -308,6 +313,7 @@ body, ul, li
       text-align: center;
       padding: 2rem;
       background-color: #fff;
+      margin-top: 5.5rem;
             
   }
   /* #fff, #90caf9, #5d99c6 cores pro gradiente*/
@@ -346,6 +352,7 @@ body, ul, li
     text-align: center;
     padding: 2rem;
     background-color: #90caf9;
+    margin-top: 5.5rem;
   }
 
 
@@ -394,4 +401,9 @@ body, ul, li
 .invisivel
 {
     display: none;
+}
+
+.visivel
+{
+  display: block;
 }
