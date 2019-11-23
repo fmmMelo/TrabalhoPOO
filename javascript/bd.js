@@ -1,5 +1,6 @@
-var vetor = new Array();
-var i, pega;
+var user_vetor = new Array();
+var doa_vetor = new Array();
+var i, user_pega, doa_pega;
 
 class Local
 {
@@ -7,25 +8,74 @@ class Local
         {
            if(localStorage.length == 0)
            {
-                vetor.push(usuario);
-                localStorage.setItem("Usuarios", JSON.stringify(vetor));
+                user_vetor.push(usuario);
+                localStorage.setItem("Usuarios", JSON.stringify(user_vetor));
 
                 alert("O primeiro usuario foi cadastrado!");
            }
 
             else
             {
-                pega = JSON.parse(localStorage.getItem("Usuarios"));
-                pega.push(usuario);
-                localStorage.setItem("Usuarios", JSON.stringify(pega));
+                user_pega = JSON.parse(localStorage.getItem("Usuarios"));
+                user_pega.push(usuario);
+                localStorage.setItem("Usuarios", JSON.stringify(user_pega));
 
                 alert("O usuario foi cadastrado!");
             }
         }
 }
 
+class doacao
+{
+    org() 
+        {
+           if(localStorage.length == 0)
+           {
+                doa_vetor.push();
+                localStorage.setItem("Doacoes", JSON.stringify(doa_vetor));
 
-class Lol
+                alert("A primeiroa doação foi cadastrada!");
+           }
+
+            else
+            {
+                doa_pega = JSON.parse(localStorage.getItem("Doacoes"));
+                doa_pega.push();
+                localStorage.setItem("Doacoes", JSON.stringify(doa_pega));
+
+                alert("A doação foi cadastrada!");
+            }
+        }
+}
+
+
+class doa
+{
+    constructor()
+    {
+        this.info_nome;
+        this.info_cpf;
+        this.endereco;
+        this.tipo;
+        this.quant;
+        this.tamanho;
+    }
+
+    registro(od)
+    {
+        var info_user = JSON.parse(localStorage.getItem("Usuarios"));
+
+        
+        this.info_cpf = info_user[od].cpf;
+        this.endereco = lugar.value; 
+        this.tipo = tipo.value;
+        this.quant = quant.value;
+        this.tamanho = tamanho.value;
+    }
+}
+
+
+class users
 {
     constructor()
     {
@@ -65,10 +115,6 @@ class Lol
     
     }
 
-    entrar_admin()
-    {
-        
-    }
 
     // search(id)
     // {

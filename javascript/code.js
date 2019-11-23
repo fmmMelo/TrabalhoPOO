@@ -20,19 +20,13 @@ var global, id;
 function inserir()
 {
 
-    var ver_nome = document.getElementById('name').value;
-    var ver_dn = document.getElementById('date').value;
-    var ver_email = document.getElementById('email').value;
-    var ver_cpf = document.getElementById('cpf').value;
-    var ver_senha = document.getElementById('pass').value;
-
-    if(ver_nome == "" ||ver_dn == "" ||ver_email == "" ||ver_cpf == "" ||ver_senha == "")
+    if(ver_nome.value == "" ||ver_dn.value == "" ||ver_email.value == "" ||ver_cpf.value == "" ||ver_senha.value == "")
     {
         alert("Os campos estão vazios!");
     }
     else
     {
-        var add = new Lol();
+        var add = new users();
         add.save();
 
         var add_bd = new Local();
@@ -49,15 +43,33 @@ function enter()
 
     if(nome == "admin" && senha == "admin")
     {
-        var envia_admin = new Lol();
+        var envia_admin = new users();
         id = envia_admin.entrar_admin(nome, senha);
     }
 
-   var envia = new Lol();
+   var envia = new users();
    id = envia.entrar(nome, senha);
+   id = 0;
    
-
 }
+
+function enviar()
+{
+    if(tipo.value == ""|| quant.value == "" || tamanho.value == "" || lugar.value == "")
+    {
+        return alert("campos vazios!");
+    }
+    else
+    {
+        var envia_doacao = new doa();
+        envia_doacao.registro(id);
+
+        var doacao_bd = new doacao();
+        doacao_bd.org (envia_doacao);
+
+    }
+}
+
 
 function update()
 {
