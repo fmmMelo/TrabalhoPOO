@@ -18,14 +18,15 @@
 <body>
     <header class="header">
 
-        <h1><a href="">Doação Online</a></h1>
+        <h1><a href="" onclick="volta(undefined)">DoaOnline</a></h1>
 
         <nav>
             <ul class="menu">
             
-                <li><a href="#Editar" onclick="view('4')" id="edit" class="invisivel">edit account</a></li>
-                <li><a href="#tela-reg" onclick="view('2')">Comunidade</a></li>
-                <li><a href="#tela-reg" onclick="view('3')">Contato</a></li>
+                <li><a href="#Editar" onclick="view('5')" id="edit" class="invisivel">edit account</a></li>
+                <li><a href="/" >Forúm</a></li>
+                <li><a href="#tela-contato" onclick="view('3')">Contato</a></li>
+                <li><a href="#Info" onclick="view('4')">Quem somos?</a></li>
                 <li class="btu"><a href="#tela-reg" onclick="view('1')">Entrar / Cadastrar-se</a></li>
 
             </ul>
@@ -34,17 +35,17 @@
 
     <section id="tela-intro" class="hero-intro">
         <h1>Doação Online</h1>
-        <p>Faça sua parte e descubra onde contribuir em Dourados</p>
+        <p>Faça sua parte contribuindo online e descubra lugares de acolhimento em Dourados</p>
         
         <div class="hero-btn">
-            <button class="btn-2">Como posso ajudar ?</button>
+            <button class="btn-2" onclick="view('4')">Como posso ajudar ?</button>
         </div>
       
       </section>
 
       <div id="tela-texto" class="coluna">
         <section>
-            <img src="http://www.ufes.br/sites/default/files/styles/imagem_conteudo/public/field/image/agasalho1.gif?itok=g2IJgjRC">
+            <img src="../img/roupas.jpg">
             <h1>Teste 1</h1>
             <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e 
                 vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos 
@@ -56,7 +57,7 @@
         </section>
 
         <section>
-            <img src="http://www.ufes.br/sites/default/files/styles/imagem_conteudo/public/field/image/agasalho1.gif?itok=g2IJgjRC">
+            <img src="../img/roupas.jpg">
             <h1>Teste 2</h1>
             <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e 
                 de impressos, e vem sendo utilizado desde o século XVI, quando um impressor descon
@@ -69,7 +70,7 @@
         </section>
 
         <section>
-             <img src="http://www.ufes.br/sites/default/files/styles/imagem_conteudo/public/field/image/agasalho1.gif?itok=g2IJgjRC">
+             <img src="../img/roupa.jpg">
             <h1>Teste 3</h1>
             <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de
                 impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido
@@ -145,7 +146,7 @@
         </div>
     </section>
 
-    <section id ="tela-doa" class="container">
+    <section id ="tela-doa" class="invisivel">
                 
         <div>
             <form>
@@ -165,11 +166,36 @@
                     <p><label>Endereço</label></p>
                     <input type="text" id="lugar">
 
-                    <button onclick="enviar(tipo.value, quant.value, tamanho.value, lugar.value)">Contribuir</button>
+                    <button onclick="enviar()">Contribuir</button>
             </div>
 
 </section>
+
+<section id="banco-doacao" class="invisivel">
+
+    <div id ="mostrar-registros" class="">
+        <h1>Aqui estão todas as doações</h1>
+
+        <div id="mostra-doacao">
+
+        </div>
+    </div>
+
+</section>
    
+<section id="section_inf" class="invisivel">
+        <div class="form-en">
+            <h1>O que é o DoaOnline?</h1>
+                <p> Sistema criado com o objetivo de auxiliar na doação de roupas e outros, e com mapeamento dos pontos de coleta dessas doações.</p>
+            <h1>Como contribuir?</h1>
+                <h2> - Sistema parar doar</h2>
+                <p>É muito simples e prático, basta o usuário fazer seu cadastro no sistema, e a partir disso, já estará a disposição para pode ser feito as doações.</p>
+                
+                <h2> - Solicitação de novos pontos</h2>
+                <p>Através desse cadastro o usuario pode solicitar a criação de novos pontos de coleta no mapa.</p>
+                <p>Esse sistema de mapeamento serve para conseguir vizualisar os pontos de coleta mais próximos da sua casa, tornando-se o processo de doação mais fácil e rápido.</p>
+            </div>        
+    </section>
 
 </body>
 

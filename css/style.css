@@ -149,6 +149,7 @@ body, ul, li
 {
     position: fixed;
     width: 100%;
+    padding: 5px 13px 5px 13px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -159,6 +160,11 @@ body, ul, li
 .header ul li 
 {
     display: inline-block;
+}
+
+.header h1 
+{
+  margin: 0;
 }
 
 .menu
@@ -354,6 +360,26 @@ body, ul, li
     background-color: #90caf9;
     margin-top: 5.5rem;
   }
+  
+  .form-en 
+  {
+      border: none;
+      border-radius: 5px;
+      color: #5d99c6;
+      max-width: 60%;
+      max-height: 1000%; 
+      justify-content: center;
+      position: relative;
+      text-align: justify;
+      padding: 2rem;
+      background-color: white;
+  }
+
+  .form-en h1 
+  {
+    text-align: center;
+  }
+
 
 
   .form-log input
@@ -377,6 +403,7 @@ body, ul, li
     color: #fff;
     text-align: center;
   }
+
 
   .form-log label
   {

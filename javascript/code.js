@@ -10,8 +10,18 @@ function view(ard)
 
     if(ard == "3")
     {
-        document.getElementById("tela-atu").className = "section";
+        document.getElementById("tela-atu").className = "container";
     }
+
+    if(ard == "4")
+    {
+        document.getElementById("section_inf").className = "container";
+        document.getElementById("tela-intro").className = "invisivel";
+        document.getElementById("tela-texto").className = "invisivel";
+        document.getElementById("tela-mapa").className = "invisivel";
+        document.getElementById("mapa-marcadores").className = "invisivel";
+    }
+
 }
 
 
@@ -20,7 +30,7 @@ var global, id;
 function inserir()
 {
 
-    if(ver_nome.value == "" ||ver_dn.value == "" ||ver_email.value == "" ||ver_cpf.value == "" ||ver_senha.value == "")
+    if(name.value == "" ||date.value == "" ||email.value == "" ||cpf.value == "" ||pass.value == "")
     {
         alert("Os campos estão vazios!");
     }
@@ -43,13 +53,35 @@ function enter()
 
     if(nome == "admin" && senha == "admin")
     {
-        var envia_admin = new users();
-        id = envia_admin.entrar_admin(nome, senha);
+        var get_doacao = JSON.parse(localStorage.getItem("Doacoes"));
+        var get_usuario = JSON.parse(localStorage.getItem("Usuarios"));
+
+            document.getElementById('mostra-doacao').innerHTML = " ";
+
+            for(i = 0; i < get_doacao.length; i++)
+            {
+
+                var pega_id = get_doacao[i].id_usuario;
+
+                document.getElementById('mostra-doacao').innerHTML += "<div style = 'margin: 10vh' ><p>Nome: "+get_usuario[pega_id].name+"</p><p>CPF: "+get_usuario[pega_id].cpf+"</p><p>Tipo: "+get_doacao[i].tipo+"</p>"+"</p><p>Quantidade: "+get_doacao[i].quant+"</p>"+"</p><p>tamanho: "+get_doacao[i].tamanho+"</p><p>Endereço: "+get_doacao[i].endereco+"</p>";
+            }
     }
 
-   var envia = new users();
-   id = envia.entrar(nome, senha);
-   id = 0;
+    else
+    {
+        var envia = new users();
+        id = envia.entrar(nome, senha);
+        
+        if(id == -1)
+        {
+            alert("O usuario não está cadastrado!");
+        }
+         else
+         {
+             alert("você está registrado e entrou!");
+         }
+    }
+
    
 }
 
@@ -61,11 +93,18 @@ function enviar()
     }
     else
     {
-        var envia_doacao = new doa();
-        envia_doacao.registro(id);
+        var add_doacao = new doa();
+        var recebe = add_doacao.registro(id);
 
-        var doacao_bd = new doacao();
-        doacao_bd.org (envia_doacao);
+        if(recebe == -1)
+        {
+            alert("Mensagem de erro: Faça login ou Cadastre-se para fazer sua doação!")
+        }
+        else
+        {
+            var doacao_bd = new doacao();
+            doacao_bd.org(add_doacao);
+        }
 
     }
 }
@@ -76,4 +115,9 @@ function update()
     var up = new Lol();
     up.upgrade(id);
 
+}
+
+function volta(ord)
+{
+    id = ord;
 }

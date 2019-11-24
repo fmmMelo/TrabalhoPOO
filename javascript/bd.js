@@ -27,34 +27,43 @@ class Local
 
 class doacao
 {
-    org() 
+    org(acolhimento) 
         {
            if(localStorage.length == 0)
            {
-                doa_vetor.push();
-                localStorage.setItem("Doacoes", JSON.stringify(doa_vetor));
-
-                alert("A primeiroa doação foi cadastrada!");
+            alert("Mensagem de erro: Faça login ou Cadastre-se para fazer sua doação!");
            }
 
             else
             {
-                doa_pega = JSON.parse(localStorage.getItem("Doacoes"));
-                doa_pega.push();
-                localStorage.setItem("Doacoes", JSON.stringify(doa_pega));
+                if(localStorage.length == 2)
+                {
 
-                alert("A doação foi cadastrada!");
+                    doa_pega = JSON.parse(localStorage.getItem("Doacoes"));
+                    doa_pega.push(acolhimento);
+                    localStorage.setItem("Doacoes", JSON.stringify(doa_pega));
+                    alert("inseriu nova doação")
+
+                    alert("A doação foi cadastrada!");
+                }
+                    else
+                    {
+                        doa_vetor.push(acolhimento);
+                        localStorage.setItem("Doacoes", JSON.stringify(doa_vetor));
+                        alert("inseriu nova tabela");
+                        alert("A doação foi cadastrada!");
+                    }             
             }
         }
 }
+
 
 
 class doa
 {
     constructor()
     {
-        this.info_nome;
-        this.info_cpf;
+        this.id_usuario;
         this.endereco;
         this.tipo;
         this.quant;
@@ -63,14 +72,19 @@ class doa
 
     registro(od)
     {
-        var info_user = JSON.parse(localStorage.getItem("Usuarios"));
-
-        
-        this.info_cpf = info_user[od].cpf;
-        this.endereco = lugar.value; 
-        this.tipo = tipo.value;
-        this.quant = quant.value;
-        this.tamanho = tamanho.value;
+    
+        if(od == undefined)
+        {
+            return -1
+        }
+            else
+            {
+                this.id_usuario = od;
+                this.endereco = lugar.value; 
+                this.tipo = tipo.value;
+                this.quant = quant.value;
+                this.tamanho = tamanho.value;
+            }
     }
 }
 
@@ -95,23 +109,29 @@ class users
         this.pass = document.getElementById("pass").value;
     }
 
-    entrar(nome, senha)
+    entrar(no, se)
     {
         var ent = JSON.parse(localStorage.getItem("Usuarios"));
 
-        for( i = 0; i <= ent.length; i++)
+        if(ent == null)
         {
-            if(ent[i].name == nome && ent[i].pass == senha)
-            {
-                document.getElementById("edit").className = "menu";
-                document.getElementById("tela-reg").className = "invisivel";
-                return i
-            }
-
+            alert("Não há nenhum registro cadastrado!");
         }
+            else
+            {
+                for( i = 0; i <= ent.length; i++)
+                {
+                    if(ent[i].name == no && ent[i].pass == se)
+                    {
+                        document.getElementById("edit").className = "menu";
+                        document.getElementById("tela-reg").className = "invisivel";
+                        return i
 
-        alert("usuario não está cadastrado!");
+                    }
 
+                 }
+                        return -1
+            }
     
     }
 
