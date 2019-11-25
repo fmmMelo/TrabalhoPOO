@@ -99,7 +99,7 @@ function enter()
                 document.getElementById('mostra-doacao').innerHTML += "<div><h4>"+get_doacao[i].id_doacao+"° doação</h4><p>Nome: "+get_usuario[pega_id].name+"</p><p>CPF: "+get_usuario[pega_id].cpf+"</p><p>Tipo: "+get_doacao[i].tipo+"</p>"+"</p°:><p>Quantidade: "+get_doacao[i].quant+"</p>"+"</p><p>tamanho: "+get_doacao[i].tamanho+"</p><p>Endereço: "+get_doacao[i].endereco+"</p>";
             
 
-                document.getElementById('mostra-solicitacoes').innerHTML += "<div><h4>"+i+"° doação</h4></p><p>Nome: "+get_solict[i].name+"</p></p><p>Número: "+get_solict[i].num+"</p></p><p>Rua: "+get_solict[i].rua+"</p>N°: "+get_solict[i].nrua+"</p><p>Bairro: "+get_solict[i].bairro+"</p>";
+                document.getElementById('mostra-solicitacoes').innerHTML += "<div><h4>"+i+"° Solicitação</h4></p><p>Nome: "+get_solict[i].name+"</p></p><p>Número: "+get_solict[i].num+"</p></p><p>Rua: "+get_solict[i].rua+"</p>N°: "+get_solict[i].nrua+"</p><p>Bairro: "+get_solict[i].bairro+"</p>";
             
             }
     }

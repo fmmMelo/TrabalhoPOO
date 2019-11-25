@@ -2,6 +2,7 @@ var user_vetor = new Array();
 var doa_vetor = new Array();
 var contact_vetor = new Array();
 var i, user_pega, doa_pega, contact_pega;
+var ard, soc;
 
 class Local
 {
@@ -48,21 +49,42 @@ class doacao
 
             else
             {
-                if(localStorage.length == 2)
+                if(localStorage.length == 1)
                 {
-
-                    doa_pega = JSON.parse(localStorage.getItem("Doacoes"));
-                    doa_pega.push(acolhimento);
-                    localStorage.setItem("Doacoes", JSON.stringify(doa_pega));
+                    doa_vetor.push(acolhimento);
+                    localStorage.setItem("Doacoes", JSON.stringify(doa_vetor));
+                    
                 }
                     else
                     {
-                        doa_vetor.push(acolhimento);
-                        localStorage.setItem("Doacoes", JSON.stringify(doa_vetor));
-                    }             
-            }
+                        ard = -1;
+
+                        for(i=0; i < localStorage.length; i++)
+                        {
+                            if(localStorage[i] == "Doacoes")
+                            {
+                                doa_pega = JSON.parse(localStorage.getItem("Doacoes"));
+                                doa_pega.push(acolhimento);
+                                localStorage.setItem("Doacoes", JSON.stringify(doa_pega));
+
+                                ard = 1;
+                                alert("öxiii111"+ard);
+                            }
+                            
+                        }
+
+                        if(ard == "-1")
+                            {
+                                doa_vetor.push(acolhimento);
+                                localStorage.setItem("Doacoes", JSON.stringify(doa_vetor));
+                                alert("öxiii222"+ard);
+                            }
+                    }
+                        
+            }             
         }
-}
+    }
+
 
 
 class caixa
@@ -76,30 +98,61 @@ class caixa
  
              else
              {
-                 if(localStorage.length == 3)
+
+                 if(localStorage.length == 1)
                  {
- 
-                     contact_pega = JSON.parse(localStorage.getItem("Solicitacoes"));
-                     contact_pega.push(msg);
-                     localStorage.setItem("Solicitacoes", JSON.stringify(contact_pega));
-                     swal({
-                        title: "Tudo Certo!",
-                        text: "Sua solicitação foi enviada!",
-                        icon: "success",
-                        button: "Ok!",
-                      });
-                    }
-                     else
-                     {
-                         contact_vetor.push(msg);
-                         localStorage.setItem("Solicitacoes", JSON.stringify(contact_vetor));
+                        contact_vetor.push(msg);
+                        localStorage.setItem("Solicitacoes", JSON.stringify(contact_vetor));
                          swal({
                             title: "Tudo Certo!",
                             text: "Sua solicitação foi enviada!",
                             icon: "success",
                             button: "Ok!",
                           });
-                    }             
+                    
+                    }
+                     else
+                        {
+                            soc = -1; 
+
+                            for(i = 0; i < localStorage.length; i++)
+                            {
+                                if(localStorage[i] == "Solicitacoes")
+                                {
+                                    contact_pega = JSON.parse(localStorage.getItem("Solicitacoes"));
+                                    contact_pega.push(msg);
+                                    localStorage.setItem("Solicitacoes", JSON.stringify(contact_pega));
+                                    swal({
+                                        title: "Tudo Certo!",
+                                        text: "Sua solicitação foi enviada!",
+                                        icon: "success",
+                                        button: "Ok!",
+                                    });
+
+                                    soc = 1;
+
+                                    alert("opa11"+soc);
+                                    
+                                }
+                                        
+                            }
+
+                            if(soc == "-1")
+                            {
+                                        contact_vetor.push(msg);
+                                        localStorage.setItem("Solicitacoes", JSON.stringify(contact_vetor));
+                                        swal({
+                                            title: "Tudo Certo!",
+                                            text: "Sua solicitação foi enviada!",
+                                            icon: "success",
+                                            button: "Ok!",
+                                        });
+
+                                        alert("opa22"+soc);
+                            }
+
+                            
+                        }             
              }
         }
 }
@@ -245,6 +298,8 @@ class users
             }
     
     }
+
+
 
 
     // search(id)
