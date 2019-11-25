@@ -1,6 +1,7 @@
 var user_vetor = new Array();
 var doa_vetor = new Array();
-var i, user_pega, doa_pega;
+var contact_vetor = new Array();
+var i, user_pega, doa_pega, contact_pega;
 
 class Local
 {
@@ -11,7 +12,12 @@ class Local
                 user_vetor.push(usuario);
                 localStorage.setItem("Usuarios", JSON.stringify(user_vetor));
 
-                alert("O primeiro usuario foi cadastrado!");
+                swal({
+                    title: "Tudo Certo!",
+                    text: "O usuário foi cadastrado!",
+                    icon: "success",
+                    button: "Ok!",
+                  });
            }
 
             else
@@ -20,10 +26,16 @@ class Local
                 user_pega.push(usuario);
                 localStorage.setItem("Usuarios", JSON.stringify(user_pega));
 
-                alert("O usuario foi cadastrado!");
+                swal({
+                    title: "Tudo Certo!",
+                    text: "O usuário foi cadastrado!",
+                    icon: "success",
+                    button: "Ok!",
+                  });
             }
         }
 }
+
 
 class doacao
 {
@@ -31,7 +43,7 @@ class doacao
         {
            if(localStorage.length == 0)
            {
-            alert("Mensagem de erro: Faça login ou Cadastre-se para fazer sua doação!");
+            sweetAlert("Oops...", "Faça login ou Cadastre-se para fazer sua doação!", "error");
            }
 
             else
@@ -42,20 +54,65 @@ class doacao
                     doa_pega = JSON.parse(localStorage.getItem("Doacoes"));
                     doa_pega.push(acolhimento);
                     localStorage.setItem("Doacoes", JSON.stringify(doa_pega));
-                    alert("inseriu nova doação")
-
-                    alert("A doação foi cadastrada!");
                 }
                     else
                     {
                         doa_vetor.push(acolhimento);
                         localStorage.setItem("Doacoes", JSON.stringify(doa_vetor));
-                        alert("inseriu nova tabela");
-                        alert("A doação foi cadastrada!");
                     }             
             }
         }
 }
+
+
+class caixa
+{
+    entrada(msg) 
+        {
+            if(localStorage.length == 0)
+            {
+             sweetAlert("Oops...", "Faça login ou Cadastre-se para fazer sua doação!", "error");
+            }
+ 
+             else
+             {
+                 if(localStorage.length == 3)
+                 {
+ 
+                     contact_pega = JSON.parse(localStorage.getItem("Solicitacoes"));
+                     contact_pega.push(msg);
+                     localStorage.setItem("Solicitacoes", JSON.stringify(contact_pega));
+                     swal({
+                        title: "Tudo Certo!",
+                        text: "Sua solicitação foi enviada!",
+                        icon: "success",
+                        button: "Ok!",
+                      });
+                    }
+                     else
+                     {
+                         contact_vetor.push(msg);
+                         localStorage.setItem("Solicitacoes", JSON.stringify(contact_vetor));
+                         swal({
+                            title: "Tudo Certo!",
+                            text: "Sua solicitação foi enviada!",
+                            icon: "success",
+                            button: "Ok!",
+                          });
+                    }             
+             }
+        }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -63,6 +120,7 @@ class doa
 {
     constructor()
     {
+        this.id_doacao;
         this.id_usuario;
         this.endereco;
         this.tipo;
@@ -72,21 +130,73 @@ class doa
 
     registro(od)
     {
-    
+        
+        var cont_id;
+
         if(od == undefined)
         {
             return -1
         }
             else
             {
-                this.id_usuario = od;
-                this.endereco = lugar.value; 
-                this.tipo = tipo.value;
-                this.quant = quant.value;
-                this.tamanho = tamanho.value;
+                var pega_cont = JSON.parse(localStorage.getItem("Doacoes"));
+
+                if(pega_cont == null)
+                {
+                    cont_id = 1;
+
+                    this.id_doacao = cont_id;
+                    this.id_usuario = od;
+                    this.endereco = lugar.value; 
+                    this.tipo = tipo.value;
+                    this.quant = quant.value;
+                    this.tamanho = tamanho.value;
+                }
+                else
+                {
+                    for(i = 0; i < pega_cont.length; i++)
+                    {
+                        cont_id = pega_cont.length + 1;
+    
+                        this.id_doacao = cont_id;
+                        this.id_usuario = od;
+                        this.endereco = lugar.value; 
+                        this.tipo = tipo.value;
+                        this.quant = quant.value;
+                        this.tamanho = tamanho.value;
+                    }
+                }
+                
             }
     }
 }
+
+
+class contato
+{
+    constructor()
+    {
+        this.name;
+        this.num; 
+        this.cpf;
+        this.rua;
+        this.nrua;
+        this.bairro;
+    }
+
+    enviar()
+    {
+        this.name = pega_nome.value;
+        this.num = pega_num.value;
+        this.cpf = pega_cpf.value;
+        this.rua = pega_rua.value;
+        this.nrua = pega_nrua.value;
+        this.bairro = pega_bairro.value;
+    }
+}
+
+
+
 
 
 class users
@@ -115,16 +225,17 @@ class users
 
         if(ent == null)
         {
-            alert("Não há nenhum registro cadastrado!");
+            swal("Oops...", "Não há nenhum registro cadastrado!", "error");
         }
             else
             {
-                for( i = 0; i <= ent.length; i++)
+                for( i = 0; i < ent.length; i++)
                 {
                     if(ent[i].name == no && ent[i].pass == se)
                     {
                         document.getElementById("edit").className = "menu";
                         document.getElementById("tela-reg").className = "invisivel";
+    
                         return i
 
                     }
@@ -154,11 +265,11 @@ class users
     upgrade(ord)
     {
 
-        var nome = document.getElementById("editname").value;
-        var data = document.getElementById("editdate").value;
-        var email= document.getElementById("editemail").value;
-        var cpf = document.getElementById("editcpf").value;
-        var senha= document.getElementById("editpass").value;
+        var nome = document.getElementById("at_nome").value;
+        var data = document.getElementById("at_email").value;
+        var email= document.getElementById("at_cpf").value;
+        var cpf = document.getElementById("at_dn").value;
+        var senha= document.getElementById("at_pass").value;
 
         var upgrade = JSON.parse(localStorage.getItem("Usuarios"));
 
@@ -170,7 +281,14 @@ class users
 
         localStorage.setItem("Usuarios", JSON.stringify(upgrade));
 
-        alert("Usuario atualizado com sucesso!");
+        swal({
+            title: "Tudo Certo!",
+            text: "Sua conta foi atualizada!",
+            icon: "success",
+            button: "Ok!",
+          });
 
+          document.getElementById("edita").className = "invisivel";
+          document.getElementById("tela-doa").className = "container";
     }
 }

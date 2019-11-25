@@ -5,8 +5,14 @@ body, ul, li
     list-style: none;
     font-size: 1rem;
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    
 }
+
+*
+{
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 .hero-intro{
     /* Alinhamento de texto no centro vertical */
@@ -216,6 +222,7 @@ body, ul, li
     margin-left: 12px;
     font-size: 2rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
   /* -------------------------------Parte da API do Google Maps ------------------------------------ */
@@ -313,14 +320,55 @@ body, ul, li
       color: #5d99c6;
       font-weight: 500;
       width: 500px;
-      height: 550px; 
+      height: 525px; 
       justify-content: center;
       position: relative;
       text-align: center;
       padding: 2rem;
       background-color: #fff;
-      margin-top: 5.5rem;
+      margin-top: 3.3rem;
             
+  }
+
+  .form-solict
+  {
+      border: none;
+      align-items: center;
+      color: #5d99c6;
+      font-weight: 500;
+      width: 500px;
+      height: 675px; 
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      padding: 4px;
+      background-color: #fff;
+      margin-top: 3.3rem;
+      margin-left: 1rem;
+            
+  }
+
+
+  .form-solict input
+  {
+    border: 1px solid  #90caf9;
+    border-radius: 3px;
+    width: 190px;
+    height: 20px;
+    text-align: center;
+    color: #32373d;
+    font-size: 15px;
+  }
+
+  .form-solict button
+  {
+    width: 145px;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    background-color:  #5d99c6;
+    color: #fff;
+    text-align: center;
   }
   /* #fff, #90caf9, #5d99c6 cores pro gradiente*/
 
@@ -352,13 +400,13 @@ body, ul, li
     align-items: center;
     color: #90caf9;
     width: 300px;
-    height: 550px; 
+    height: 525px; 
     justify-content: center;
     position: relative;
     text-align: center;
     padding: 2rem;
     background-color: #90caf9;
-    margin-top: 5.5rem;
+    margin-top: 3.3rem;
   }
   
   .form-en 
@@ -425,12 +473,156 @@ body, ul, li
 
     /*---------------------------Fim da parte da API do Google Maps------------------------------------- */
 
-.invisivel
-{
-    display: none;
-}
+    .site-footer
+    {
+      background-color:#26272b;
+      padding:20px 0 20px;
+      font-size:15px;
+      line-height:24px;
+      color:#737373;
+    }
+    .site-footer hr
+    {
+      border-top-color:#bbb;
+      opacity:0.5
+    }
+    .site-footer hr.small
+    {
+      margin:20px 0
+    }
+    .site-footer h6
+    {
+      color:#fff;
+      font-size:16px;
+      text-transform:uppercase;
+      margin-top:5px;
+      letter-spacing:2px
+    }
+    .site-footer a
+    {
+      color:#737373;
+    }
+    .site-footer a:hover
+    {
+      color:#3366cc;
+      text-decoration:none;
+    }
+    .footer-links
+    {
+      list-style:none;
+    }
+    .footer-links li
+    {
+      display:block;
+    }
+    .footer-links a
+    {
+      color:#737373;
+    }
+    .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+    {
+      color:#3366cc;
+      text-decoration:none;
+    }
+    .footer-links.inline li
+    {
+      display:inline-block;
+    }
+    .site-footer
+    {
+      text-align: justify;
+    }
+   
+    .copyright-text
+    {
+      margin:0;
+    }
+    @media (max-width:991px)
+    {
+      .site-footer [class^=col-]
+      {
+        margin-bottom:30px
+      }
+    }
+    @media (max-width:767px)
+    {
+      .site-footer
+      {
+        padding-bottom:0
+      }
+      .site-footer .copyright-text,.site-footer .social-icons
+      {
+        text-align:center
+      }
+    }
 
-.visivel
-{
-  display: block;
+
+    .footer
+    {
+      display: flex;
+    }
+    
+    .footer-2
+    {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .section
+    {
+      background-color: #5d99c6;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    .section h1
+    {
+      color: #fff;
+    }
+
+    .table-reg div
+    {
+      padding: 2rem;
+      width: 200px;
+      height: 300px;
+      margin: 8px;
+      background-color: #fff;
+      border-radius: 4px ;
+    }
+
+    .table-reg div h1
+    {
+      text-align: center;
+    }
+
+    .table-reg div p 
+    {
+      text-align: justify;
+    }
+
+    .table-reg
+    {
+      max-width: 90%;
+      max-height: 90%;
+      color: #5d99c6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+
+
+/* -------- visivel e invisivel ------------------- */
+    .invisivel
+    {
+        display: none;
+    }
+
+    .visivel
+    {
+      display: block;
 }
+/* -------- visivel e invisivel ------------------- */

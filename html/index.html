@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " ></script> 
 <script src="../javascript/bd.js"></script>
 <script src="../javascript/code.js"></script>
 <script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxLiIYyQ5foAHNm1bVMf47qsve4ERTG7Y&callback=initMap"></script>
@@ -18,16 +18,14 @@
 <body>
     <header class="header">
 
-        <h1><a href="" onclick="volta(undefined)">DoaOnline</a></h1>
+        <h1 onclick="home()"><a>DoaOnline</a></h1>
 
         <nav>
             <ul class="menu">
-            
+
                 <li><a href="#Editar" onclick="view('5')" id="edit" class="invisivel">edit account</a></li>
-                <li><a href="/" >Forúm</a></li>
-                <li><a href="#tela-contato" onclick="view('3')">Contato</a></li>
-                <li><a href="#Info" onclick="view('4')">Quem somos?</a></li>
-                <li class="btu"><a href="#tela-reg" onclick="view('1')">Entrar / Cadastrar-se</a></li>
+                <li><a href="#inf" onclick="view('4')" id="info" class="visivel" >Quem somos?</a></li>
+                <li class="btu"><a href="#tela-reg" onclick="view('1')" id="enter_sig" class="visivel" >Entrar / Cadastrar-se</a></li>
 
             </ul>
         </nav>
@@ -141,7 +139,7 @@
                     <label>Senha</label>
                     <p><input type="password" id="pass" required></p>
     
-                    <p><button onclick="inserir()">Cadastrar</button></p>
+                    <p><button onclick= "inserir()">Cadastrar</button></p>
             </form>
         </div>
     </section>
@@ -149,41 +147,84 @@
     <section id ="tela-doa" class="invisivel">
                 
         <div>
-            <form>
-                <h4 class="titulo">Contribua aqui</h4>
+                <form class = "form-in">
 
-                    <label>Faça sua doação</label>
+                    <h3>Faça sua doação</h3>
 
                     <label>O que você vai doar ?</label>
-                    <input type="text" id="tipo">
+                    <p><input type="text" id="tipo" required></p>
 
                     <label>Quantidade de peças</label>
-                    <input type="number" id="quant">
+                    <p><input type="number" id="quant" required></p>
 
                     <label>Tamanho</label>
-                    <input type="text" id="tamanho">
+                    <p><input type="text" id="tamanho" required></p>
                         
-                    <p><label>Endereço</label></p>
-                    <input type="text" id="lugar">
+                    <label>Endereço</label>
+                    <p><input type="text" id="lugar" required></p>
 
                     <button onclick="enviar()">Contribuir</button>
+                </form>
+
             </div>
 
+            <div>
+                    <form class = "form-solict">
+        
+                        <h3>Solicitar ponto de acolhimento</h3>
+        
+                        <label>Nome Completo</label>
+                        <p><input type="text" id="pega_nome" required></p>
+
+                        <label>Numero de Telefone ou Celular</label>
+                        <p><input type="number" id="pega_num" required></p>
+        
+                        <label>CPF</label>
+                        <p><input type="number" id="pega_cpf" required></p>
+        
+                        <label>Rua</label>
+                        <p><input type="text" id="pega_rua" required></p>
+
+                        <label>Numero do local (N°)</label>
+                        <p><input type="number" id="pega_nrua" required></p>
+
+                        <label>Bairro</label>
+                        <p><input type="text" id="pega_bairro" required></p>
+        
+                        <button onclick="solicit()">Enviar</button>
+
+                    </form>
+                </div>
+
 </section>
+
+
 
 <section id="banco-doacao" class="invisivel">
 
-    <div id ="mostrar-registros" class="">
-        <h1>Aqui estão todas as doações</h1>
+        <div>
+            <h1>Registros de contribuições</h1>
+        </div>
 
-        <div id="mostra-doacao">
+        <div id="mostra-doacao" class="table-reg">
 
         </div>
-    </div>
 
 </section>
+
+<section id="banco-solict" class="invisivel">
+        <div>
+            <h1>Registros de solicitações</h1>
+        </div>
+    
+        <div id="mostra-solicitacoes" class="table-reg">
+    
+        </div>
+</section>
+
+
    
-<section id="section_inf" class="invisivel">
+<section id="tela-inf" class="invisivel">
         <div class="form-en">
             <h1>O que é o DoaOnline?</h1>
                 <p> Sistema criado com o objetivo de auxiliar na doação de roupas e outros, e com mapeamento dos pontos de coleta dessas doações.</p>
@@ -196,6 +237,64 @@
                 <p>Esse sistema de mapeamento serve para conseguir vizualisar os pontos de coleta mais próximos da sua casa, tornando-se o processo de doação mais fácil e rápido.</p>
             </div>        
     </section>
+
+
+    <section id = "edita" class="invisivel">
+            <div  class="form-in">
+					
+					<h1>Editar de usuário</h1>
+
+							<label>Nome</label>
+							<p><input type="text" id = 'at_nome' required></p>
+				
+							<label>E-mail</label>
+							<p><input type="email" id = 'at_email' required></p>
+				
+							<label>CPF</label>
+							<p><input type="number" id = 'at_cpf' required></p>
+				
+							<label>Nascimento</label>
+                            <p><input type="date" id = 'at_dn' required></p>
+                            
+                            <label>Senha</label>
+							<p><input type="password" id = 'at_pass' required></p>
+
+							<button onclick="atualizar()">Atualizar</button>
+						</div>
+    </section>
+
+        <!-- Site footer -->
+    <footer class="site-footer">
+            <div class="footer">
+              <div class="row">
+                
+                  <h6>Sobre nós</h6>
+                  <p class="text-justify">
+                        Sistema criado com o objetivo de <i>AUXILIAR NAS DOAÇÕES DE ROUPAS E OUTROS</i>, e com mapeamento dos pontos de coleta dessas doações.
+                    </p>
+                
+                  <h6>Veja aqui</h6>
+                  <ul class="footer-links">
+                    <li><a href="">Quem somos ?</a></li>
+                    <li><a href="">Contato</a></li>
+                    <li><a href="">Como Ajudar?</a></li>
+                  </ul>
+                
+              </div>
+              <hr>
+            </div>
+
+            <div class="footer-2">
+              <div class="row">
+               
+                  <p class="copyright-text">Copyright &copy; 2019 Todos os Direitos reservados por 
+                    <a href="#">DoaOnline</a>.
+                  </p>
+                
+              </div>
+            </div>
+      </footer>
+
 
 </body>
 
