@@ -55,7 +55,7 @@ function mapaMultiplosMarcadores(){
     
     mapaMultiplosMarcadores = new google.maps.Map(divMapaMarcadores, {
       center: locais[0].latitudeLongitude, // IFMS como centro do Mapa
-      zoom: 13 // zoom do mapa
+      zoom: 10.3 // zoom do mapa
     });
        
     /* Criar múltiplos marcadores */

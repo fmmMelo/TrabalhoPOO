@@ -96,11 +96,22 @@ function enter()
 
                 var pega_id = get_doacao[i].id_usuario;
 
-                document.getElementById('mostra-doacao').innerHTML += "<div><h4>"+get_doacao[i].id_doacao+"° doação</h4><p>Nome: "+get_usuario[pega_id].name+"</p><p>CPF: "+get_usuario[pega_id].cpf+"</p><p>Tipo: "+get_doacao[i].tipo+"</p>"+"</p°:><p>Quantidade: "+get_doacao[i].quant+"</p>"+"</p><p>tamanho: "+get_doacao[i].tamanho+"</p><p>Endereço: "+get_doacao[i].endereco+"</p>";
+                document.getElementById('mostra-doacao').innerHTML += "<div><h4>"+get_doacao[i].id_doacao+"° Doação</h4><p>Nome: "+get_usuario[pega_id].name+"</p><p>CPF: "+get_usuario[pega_id].cpf+"</p><p>Tipo: "+get_doacao[i].tipo+"</p>"+"</p°:><p>Quantidade: "+get_doacao[i].quant+"</p>"+"</p><p>tamanho: "+get_doacao[i].tamanho+"</p><p>Endereço: "+get_doacao[i].endereco+"</p>";
             
+            }
 
+<<<<<<< HEAD
+
+
+            for(i = 0; i < get_solict.length; i++)
+            {
+                var cont = 0;
+                cont++;
+                document.getElementById('mostra-solicitacoes').innerHTML += "<div><h4>"+cont+"° Solicitação</h4></p><p>Nome: "+get_solict[i].name+"</p></p><p>Número: "+get_solict[i].num+"</p></p><p>Rua: "+get_solict[i].rua+"</p><p>N°: "+get_solict[i].nrua+"</p><p>Bairro: "+get_solict[i].bairro+"</p>";
+=======
                 document.getElementById('mostra-solicitacoes').innerHTML += "<div><h4>"+i+"° Solicitação</h4></p><p>Nome: "+get_solict[i].name+"</p></p><p>Número: "+get_solict[i].num+"</p></p><p>Rua: "+get_solict[i].rua+"</p>N°: "+get_solict[i].nrua+"</p><p>Bairro: "+get_solict[i].bairro+"</p>";
             
+>>>>>>> 16f7c2d5f7e5fb9ed24d8c463096c5237e301b4d
             }
     }
 
@@ -109,7 +120,7 @@ function enter()
         var envia = new users();
         id = envia.entrar(nome, senha);
         
-        if(id == -1)
+        if(id == undefined)
         {
             swal("Oops...","O usuario não está cadastrado!", "error");
         }
@@ -131,7 +142,12 @@ function enviar()
 {
     if(tipo.value == ""|| quant.value == "" || tamanho.value == "" || lugar.value == "")
     {
-        return alert("campos vazios!");
+        return swal({
+            title: "Erro!",
+            text: "Campos vazios!",
+            icon: "error",
+            button: "Ok!",
+         });
     }
     else
     {
@@ -147,12 +163,7 @@ function enviar()
 
             var doacao_bd = new doacao();
             doacao_bd.org(add_doacao);
-            swal({
-                title: "Tudo Certo!",
-                text: "Obrigado pela contribuição!",
-                icon: "success",
-                button: "Ok!",
-              });
+            
         }
 
     }

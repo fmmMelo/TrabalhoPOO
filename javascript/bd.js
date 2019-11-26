@@ -1,14 +1,19 @@
+
 var user_vetor = new Array();
 var doa_vetor = new Array();
 var contact_vetor = new Array();
 var i, user_pega, doa_pega, contact_pega;
 var ard, soc;
 
+
+
+// -------------------------------- Inicio Parte LOCAL-STORAGE------------------
 class Local
 {
     banco(usuario) 
         {
-           if(localStorage.length == 0)
+
+           if(localStorage.getItem("Usuarios") == undefined)
            {
                 user_vetor.push(usuario);
                 localStorage.setItem("Usuarios", JSON.stringify(user_vetor));
@@ -42,13 +47,46 @@ class doacao
 {
     org(acolhimento) 
         {
-           if(localStorage.length == 0)
+           if(localStorage.getItem("Usuarios") == undefined)
            {
-            sweetAlert("Oops...", "Faça login ou Cadastre-se para fazer sua doação!", "error");
+            swal({
+                title: "Erro!",
+                text: "Faça o cadastro ou entre com uma conta!",
+                icon: "error",
+                button: "Ok!",
+             });
            }
 
             else
             {
+<<<<<<< HEAD
+                if(localStorage.getItem("Doacoes") == undefined)
+                {
+
+
+                    doa_vetor.push(acolhimento);
+                    localStorage.setItem("Doacoes", JSON.stringify(doa_vetor));
+                    swal({
+                        title: "Tudo Certo!",
+                        text: "Obrigado pela contribuição!",
+                        icon: "success",
+                        button: "Ok!",
+                      });
+                }
+                    else
+                    {
+                        doa_pega = JSON.parse(localStorage.getItem("Doacoes"));
+                        doa_pega.push(acolhimento);
+                        localStorage.setItem("Doacoes", JSON.stringify(doa_pega));
+                        swal({
+                            title: "Tudo Certo!",
+                            text: "Obrigado pela contribuição!",
+                            icon: "success",
+                            button: "Ok!",
+                          });
+                    }             
+            }
+=======
                 if(localStorage.length == 1)
                 {
                     doa_vetor.push(acolhimento);
@@ -82,6 +120,7 @@ class doacao
                     }
                         
             }             
+>>>>>>> 16f7c2d5f7e5fb9ed24d8c463096c5237e301b4d
         }
     }
 
@@ -91,13 +130,46 @@ class caixa
 {
     entrada(msg) 
         {
-            if(localStorage.length == 0)
+            if(localStorage.getItem("Usuarios") == undefined)
             {
-             sweetAlert("Oops...", "Faça login ou Cadastre-se para fazer sua doação!", "error");
+                swal({
+                    title: "Erro!",
+                    text: "Faça o cadastro ou entre com uma conta!",
+                    icon: "error",
+                    button: "Ok!",
+                 });
             }
  
              else
              {
+<<<<<<< HEAD
+                 if(localStorage.getItem("Solicitacoes") == undefined)
+                 {
+
+                    contact_vetor.push(msg);
+                    localStorage.setItem("Solicitacoes", JSON.stringify(contact_vetor));
+                    swal({
+                        title: "Tudo Certo!",
+                        text: "Sua solicitação foi enviada!",
+                        icon: "success",
+                        button: "Ok!",
+                     });
+                }
+                
+                    else
+                    {
+                        contact_pega = JSON.parse(localStorage.getItem("Solicitacoes"));
+                        contact_pega.push(msg);
+                        localStorage.setItem("Solicitacoes", JSON.stringify(contact_pega));
+                        swal({
+                        title: "Tudo Certo!",
+                        text: "Sua solicitação foi enviada!",
+                        icon: "success",
+                        button: "Ok!",
+                        });
+                    }
+
+=======
 
                  if(localStorage.length == 1)
                  {
@@ -153,21 +225,12 @@ class caixa
 
                             
                         }             
+>>>>>>> 16f7c2d5f7e5fb9ed24d8c463096c5237e301b4d
              }
         }
 }
 
-
-
-
-
-
-
-
-
-
-
-
+// -------------------------------- Fim Parte LOCAL-STORAGE------------------
 
 class doa
 {
@@ -188,6 +251,7 @@ class doa
 
         if(od == undefined)
         {
+            
             return -1
         }
             else
@@ -275,10 +339,10 @@ class users
     entrar(no, se)
     {
         var ent = JSON.parse(localStorage.getItem("Usuarios"));
-
+        
         if(ent == null)
         {
-            swal("Oops...", "Não há nenhum registro cadastrado!", "error");
+            return undefined
         }
             else
             {
@@ -294,7 +358,7 @@ class users
                     }
 
                  }
-                        return -1
+                        return undefined
             }
     
     }
