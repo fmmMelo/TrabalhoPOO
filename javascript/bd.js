@@ -59,7 +59,7 @@ class doacao
 
             else
             {
-<<<<<<< HEAD
+
                 if(localStorage.getItem("Doacoes") == undefined)
                 {
 
@@ -86,7 +86,6 @@ class doacao
                           });
                     }             
             }
-=======
                 if(localStorage.length == 1)
                 {
                     doa_vetor.push(acolhimento);
@@ -120,9 +119,8 @@ class doacao
                     }
                         
             }             
->>>>>>> 16f7c2d5f7e5fb9ed24d8c463096c5237e301b4d
+
         }
-    }
 
 
 
@@ -142,7 +140,7 @@ class caixa
  
              else
              {
-<<<<<<< HEAD
+
                  if(localStorage.getItem("Solicitacoes") == undefined)
                  {
 
@@ -169,7 +167,6 @@ class caixa
                         });
                     }
 
-=======
 
                  if(localStorage.length == 1)
                  {
@@ -225,7 +222,7 @@ class caixa
 
                             
                         }             
->>>>>>> 16f7c2d5f7e5fb9ed24d8c463096c5237e301b4d
+
              }
         }
 }

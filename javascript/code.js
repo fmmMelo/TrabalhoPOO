@@ -100,18 +100,16 @@ function enter()
             
             }
 
-<<<<<<< HEAD
-
 
             for(i = 0; i < get_solict.length; i++)
             {
                 var cont = 0;
                 cont++;
                 document.getElementById('mostra-solicitacoes').innerHTML += "<div><h4>"+cont+"° Solicitação</h4></p><p>Nome: "+get_solict[i].name+"</p></p><p>Número: "+get_solict[i].num+"</p></p><p>Rua: "+get_solict[i].rua+"</p><p>N°: "+get_solict[i].nrua+"</p><p>Bairro: "+get_solict[i].bairro+"</p>";
-=======
+
                 document.getElementById('mostra-solicitacoes').innerHTML += "<div><h4>"+i+"° Solicitação</h4></p><p>Nome: "+get_solict[i].name+"</p></p><p>Número: "+get_solict[i].num+"</p></p><p>Rua: "+get_solict[i].rua+"</p>N°: "+get_solict[i].nrua+"</p><p>Bairro: "+get_solict[i].bairro+"</p>";
             
->>>>>>> 16f7c2d5f7e5fb9ed24d8c463096c5237e301b4d
+
             }
     }
 
